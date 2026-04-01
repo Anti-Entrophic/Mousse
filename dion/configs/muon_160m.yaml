@@ -1,4 +1,3 @@
-
 # — Model —
 model_dim: 768
 n_layer: 12
@@ -42,3 +41,6 @@ optimizer: muon
 scalar_opt: lion
 adjust_lr: spectral_norm
 lr: 0.06
+
+# - Data -
+data_dir: data/fineweb100B

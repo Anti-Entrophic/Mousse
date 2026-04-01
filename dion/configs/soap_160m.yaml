@@ -37,20 +37,11 @@ debug: false
 no_compile: false
 no_triton: false
 
-optimizer: mousse
+optimizer: soap
 scalar_opt: lion
 adjust_lr: spectral_norm
-lr: 0.06
+lr: 0.03
 optimizer_debug: false
-
-# — Mousse hyperparameters —
-shampoo_epsilon: 1.0e-5
-shampoo_update_freq: 10
-shampoo_alpha: 0.125
-shampoo_beta: 0.95
-LR_correction: true
-shampoo_norm: true
-use_LorR: 0
 
 # - Data -
 data_dir: data/fineweb100B

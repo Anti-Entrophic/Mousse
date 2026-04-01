@@ -943,8 +943,9 @@ def main():
             pbar.set_postfix(val_loss=f"{val_loss:.4f}")
 
         # Restart training time for the next iteration
-        torch.cuda.synchronize()
-        t0 = time.time()
+        if last_step or (hp.val_loss_every > 0 and step % hp.val_loss_every == 0): 
+            torch.cuda.synchronize()
+            t0 = time.time()
 
         if last_step:
             break
@@ -983,6 +984,7 @@ def main():
 
         # Optimizer step
         out = optimizer.step()
+        opt_logs = None
         if isinstance(out, tuple) and len(out) == 2:
             _, opt_logs = out
 

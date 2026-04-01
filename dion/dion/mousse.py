@@ -727,7 +727,7 @@ def mousse_update_batch_async(
     if shard_dim is not None:
         # Use all-to-all to transform from a batch of shards to a single whole matrix
         # https://www.essential.ai/blog/infra
-        assert 0, "Not implemented"
+        assert 0, "Not fully tested, as all experiments in the paper were conducted on one single cluster with DDP."
         assert len(X) == world_size, "Batch size must equal world size"
         assert (
             process_group is not None
